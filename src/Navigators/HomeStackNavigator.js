@@ -7,6 +7,7 @@ import {StatusBar, Text, TextInput, View} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import CharacterDetailScreen from '../Screens/CharacterDetail';
+import SearchScreen from '../Screens/SearchScreen';
 
 const HomeStack = createNativeStackNavigator();
 
@@ -74,6 +75,13 @@ const HomeStackNavigator = () => {
         <HomeStack.Screen
           name={NavigationType.CHARACTER_DETAIL}
           component={CharacterDetailScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <HomeStack.Screen
+          name={NavigationType.SEARCH_SCREEN}
+          component={SearchScreen}
           options={{
             headerShown: false,
           }}

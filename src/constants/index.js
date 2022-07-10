@@ -16,4 +16,7 @@ export const actionTypes = {
 export const colors = {
   white: '#fff',
   black: '#000',
+  green: '#18CA75',
+  color3d3d3d: '#3d3d3d',
+  pink: '#CA184E',
 };

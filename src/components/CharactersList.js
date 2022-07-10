@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import {NavigationType} from '../constants';
+import {colors, NavigationType} from '../constants';
 
 const CharacterList = ({
   navigation,
@@ -49,18 +49,13 @@ const CharacterList = ({
           <TouchableOpacity
             activeOpacity={0.6}
             onPress={() => removeFavouriteHandler(item)}>
-            <FontAwesome name="heart" size={20} color={'#18CA75'} />
+            <FontAwesome name="heart" size={20} color={colors.green} />
           </TouchableOpacity>
         ) : (
           <TouchableOpacity
             activeOpacity={0.6}
             onPress={() => addToFavouriteHandler(item)}>
-            <Feather
-              name="heart"
-              size={20}
-              color={'#3d3d3d'}
-              selectionColor="white"
-            />
+            <Feather name="heart" size={20} color={colors.color3d3d3d} />
           </TouchableOpacity>
         )}
       </View>
