@@ -10,8 +10,8 @@ const CharacterList = ({
   index,
   addToFavouriteHandler,
   removeFavouriteHandler,
+  isFavouriteScreen,
 }) => {
-  console.log('image', item.img);
   return (
     <View style={[styles.topContainer]}>
       <TouchableOpacity
@@ -45,17 +45,25 @@ const CharacterList = ({
           ]}>
           {item.name}
         </Text>
-        {item?.fav == true ? (
+        {isFavouriteScreen == undefined ? (
+          item?.fav == true ? (
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={() => removeFavouriteHandler(item)}>
+              <FontAwesome name="heart" size={20} color={colors.green} />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={() => addToFavouriteHandler(item)}>
+              <Feather name="heart" size={20} color={colors.color3d3d3d} />
+            </TouchableOpacity>
+          )
+        ) : (
           <TouchableOpacity
             activeOpacity={0.6}
             onPress={() => removeFavouriteHandler(item)}>
             <FontAwesome name="heart" size={20} color={colors.green} />
-          </TouchableOpacity>
-        ) : (
-          <TouchableOpacity
-            activeOpacity={0.6}
-            onPress={() => addToFavouriteHandler(item)}>
-            <Feather name="heart" size={20} color={colors.color3d3d3d} />
           </TouchableOpacity>
         )}
       </View>

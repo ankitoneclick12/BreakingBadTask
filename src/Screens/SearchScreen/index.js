@@ -62,6 +62,7 @@ const SearchScreen = ({navigation}) => {
         />
       </View>
       <FlatList
+        keyExtractor={(item, index) => index.toString()}
         ListEmptyComponent={() => {
           return (
             <>

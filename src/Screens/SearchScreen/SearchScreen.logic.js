@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux';
 import React, {useEffect, useState} from 'react';
-import {actionTypes} from '../../constants';
+import {actionTypes, BASE_URL} from '../../constants';
 
 const SearchScreenLogic = () => {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ const SearchScreenLogic = () => {
   const [isStartSearch, setIsStartSearch] = useState(false);
 
   const searchCharacterByName = text => {
-    fetch(`https://www.breakingbadapi.com/api/characters?name=${text}`, {
+    fetch(`${BASE_URL}api/characters?name=${text}`, {
       method: 'GET',
     }).then(async response => {
       const res = JSON.parse(await response.text());

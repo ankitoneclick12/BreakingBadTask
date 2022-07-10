@@ -20,3 +20,5 @@ export const colors = {
   color3d3d3d: '#3d3d3d',
   pink: '#CA184E',
 };
+
+export const BASE_URL = 'https://www.breakingbadapi.com/';

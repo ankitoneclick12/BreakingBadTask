@@ -241,6 +241,7 @@ const CharacterDetailScreen = ({route, navigation}) => {
             Other characters
           </Text>
           <FlatList
+            keyExtractor={(item, index) => index.toString()}
             data={otherCharacter}
             horizontal
             style={{marginTop: 7, marginBottom: 12}}

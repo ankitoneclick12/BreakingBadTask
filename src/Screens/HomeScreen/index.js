@@ -24,6 +24,7 @@ const HomeScreen = ({route, navigation}) => {
       <FlatList
         data={charactersData}
         numColumns={2}
+        keyExtractor={(item, index) => index.toString()}
         style={{marginTop: 7, marginBottom: 12}}
         renderItem={({item, index}) => {
           return (

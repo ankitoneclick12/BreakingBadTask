@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux';
 import React, {useEffect} from 'react';
-import {actionTypes} from '../../constants';
+import {actionTypes, BASE_URL} from '../../constants';
 
 const HomeScreenLogic = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const HomeScreenLogic = () => {
   }, []);
 
   const getAllCharacters = async () => {
-    fetch('https://www.breakingbadapi.com/api/characters', {
+    fetch(`${BASE_URL}api/characters`, {
       method: 'GET',
     }).then(async response => {
       const res = JSON.parse(await response.text());
